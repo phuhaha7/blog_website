@@ -1,0 +1,26 @@
+{% extends "layout.html" %} {% load static %}
+{% block content%}
+
+<div class="homepage-body">
+  <div class="header">
+    <h2 class="headline">{{username}}'s Blog</h2>
+  </div>
+
+  <div class="row">
+    <div class="leftcolumn">
+
+      {% for post in posts reversed %}
+      <div class="card">
+        <a style="text-decoration: none; color: black;" href="/{{username}}/{{post.id}}">
+          <h2>{{post.title}}</h2>
+          <h5>{{post.created_at}}</h5>
+          <p>{{post.body|truncatewords:20}}</p>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+{% endblock %}

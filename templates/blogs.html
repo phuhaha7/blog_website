@@ -1,0 +1,22 @@
+{% extends "layout.html" %} {% load static %}
+{% block content%}
+<div class="homepage-body explore-body">
+  <div class="header">
+    <h2 class="headline">Blogs</h2>
+  </div>
+
+  <div class="row">
+    <div class="leftcolumn">
+      {% for username in usernames %}
+      <div class="card">
+        <a style="text-decoration: none; color: black;" href="/{{username}}">
+          <h2>{{username}}'s Blog</h2>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+{% endblock %} 

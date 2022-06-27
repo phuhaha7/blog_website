@@ -1,0 +1,17 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+<div class="edit-body">
+<h1>Update Post</h1>
+    <form method="POST" action="">
+
+        {% csrf_token %}
+        {% for field in form%}
+        <br>
+        {{field.label_tag}}
+        <br>
+        {{field}}
+        {% endfor %}
+        <br>
+        <input type="submit" value="Update">
+    </form>
+</div>
